@@ -25,7 +25,7 @@
             onpage : 10,
             buildGetData : function (offset, limit){
                 return {
-                    "filter": JSON.stringify({offset:offset, limit:limit, kokotina: Math.floor(Math.random()*11)})
+                    "filter": JSON.stringify({offset:offset, limit:limit})
                 }
             },
             onOutOfRange : function (requestedPage){
@@ -215,16 +215,19 @@
 
 
         // attach events
-        this.$element.find('a[data-navigate-prev]').click(function() {
+        this.$element.find('a[data-navigate-prev]').click(function(e) {
             that.navigateBack();
+            e.preventDefault();
         });
 
-        this.$element.find('a[data-navigate-next]').click(function() {
+        this.$element.find('a[data-navigate-next]').click(function(e) {
             that.navigateNext();
+            e.preventDefault();
         });
 
-        this.$element.find('a[data-navigate-to]').click(function() {
+        this.$element.find('a[data-navigate-to]').click(function(e) {
             that.navigateTo($(this).html());
+            e.preventDefault();
         });
     }
 
