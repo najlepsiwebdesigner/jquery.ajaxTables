@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Ajax tables</title>
+    <link href="./style.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+    <script src="./jquery.ajaxTables.js"></script>
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	<script>
+		$(function(){
+			$('.ajax-table-component').ajaxTables();
+		});
+	</script>
+</head>
+ 
+<body id="home">
+    <div class="container">
+    	<div class="row">
+    		<div class="span12">
+    			<h1>Ajax tables</h1>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="span10">
+    			<p>Imagine you have situation like this:
+    				<ul>
+    					<li>You have a <strong>REST</strong> server, which is able to 
+    						<strong>paginate listed data</strong> and tell you <strong>count of all data</strong>
+    					</li>
+    					<li>You want to <strong>display this data in simple html table</strong> and do the pagination <strong>automatically</strong> in client</li>
+    					<li>You would prefer solution, which is compatible with most of front-end frameworks as <a href="http://twitter.github.com/bootstrap/">twitter's bootstrap</a> and <a href="http://foundation.zurb.com">zurb's foundation</a>
+    					</li>
+    					<li>You like using front-end html snippets as <strong>components</strong> and jQuery plugins</li> 
+    					<li>You want something really <strong>lightweight</strong> and <strong>easily customizable</strong></li>
+    				</ul>
+    			</p>
+    			<br/>
+    			<p style="font-size:200%;line-height:35px;text-align:center;">
+    				Ajax tables are solution, <br/>which you were looking for!
+    			</p>
+    			<br/>
+    			<h4>Ajaxed table</h4>
+			    <div class="ajax-table-component" data-sourceurl="resource/rows" data-countsourceurl="resource/count" data-onpage="5">
+				 	<table class="ajax-table table table-stripped">
+				       <thead>
+				           <tr>
+				               <th data-column="id">id</th>
+				               <th data-column="title">title</th>
+				               <th data-column="date">date</th>
+				           </tr>
+				        </thead>
+				        <tbody>
+				            <tr>
+				                <td colspan="3" class="initialCell">loading data</td>
+				            </tr>
+				        </tbody>
+					</table>
+					<div class="pagination">
+					  <ul>
+					    <li><a href="#" data-navigate-prev>Prev</a></li>
+					    <li data-to-pattern><a href="#" data-navigate-to>1</a></li>
+					    <li><a href="#" data-navigate-next>Next</a></li>
+					  </ul>
+					</div>
+				</div>
+				<h4>Usage example &amp; configuration</h4>
+    			<script src="https://gist.github.com/najlepsiwebdesigner/4986960.js"></script>
+			</div>
+			<div class="span2">
+				<div class="well">
+				<strong>Current version:</strong>
+				<p>Prototype, further testing required</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
